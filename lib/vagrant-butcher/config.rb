@@ -3,7 +3,7 @@ module Vagrant
     class Config < ::Vagrant.plugin('2', :config)
       attr_accessor :enabled
       attr_accessor :guest_key_path
-      attr_accessor :cache_dir
+      attr_reader   :cache_dir
       attr_accessor :verify_ssl
       attr_accessor :retries
       attr_accessor :retry_interval
