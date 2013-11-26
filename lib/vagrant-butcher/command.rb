@@ -1,12 +1,17 @@
 module Vagrant
   module Butcher
     class Command < Vagrant.plugin("2", "command")
-      include Vagrant::Butcher::Action
+
+      def initialize
+        
+      end
+
+      def self.synopsis
+        "Delete node and client from Chef server."
+      end
 
       def execute
-        with_target_vms([], :reverse => true) do |machine|
-          machine.action(:cleanup)
-        end
+        require 'pry-debugger';binding.pry
         return 0
       end
     end
